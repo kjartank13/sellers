@@ -26,7 +26,7 @@
 
 	   	<div class="tab1div">
 	   		
-		   	<ul class="allProductsList" ng-show="tab === 1" ng-repeat="product in allProducts">
+		   	<!--<ul class="allProductsList" ng-show="tab === 1" ng-repeat="product in allProducts">
 		   		<li class="allProductsItem"> 
 		   			
 		   			<div class="itemDetails">
@@ -37,7 +37,15 @@
 		   			</div>
 
 		   		</li>
-		   	</ul>
+		   	</ul>-->
+               
+            <div class="img-thumbnails clearfix" ng-repeat="product in allProducts" ng-click="selectProduct(product.product.id)" style="float: left; padding: 1em">
+                <img ng-src="{{product.imagePath}}" height="170" width="170" />
+                <h4>{{product.name}}</h4> 
+                <h4>{{product.price}} ISK</h4>
+            </div>
+
+
 
 	   	</div>
 	   	

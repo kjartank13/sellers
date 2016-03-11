@@ -38,24 +38,24 @@ angular.module("project3App").controller("SellerDetailsController",
 			}
 		});
         
-        /*$scope.onAddProduct = function onAddProduct() {
-		ProductDlg.show().then(function(id, product) {
-			AppResource.addSellerProduct(id, product).success(function(product) {
-				// var newSeller = seller;
-				// $scope.sellers.push(seller);
-			}).error(function() {
-				//TODO: implement error notification
-			});
-		});*/
-        
         $scope.onEditSeller = function onEditSeller() {
-		EditSellerDlg.show().then(function(seller) {
-			AppResource.updateSeller(sellerID, seller).success(function(seller) {
-				// var newSeller = seller;
-				// $scope.sellers.push(seller);
-			}).error(function() {
-				//TODO: implement error notification
-			});
-		});
-	};
+            EditSellerDlg.show().then(function(seller) {
+                AppResource.updateSeller(sellerID, seller).success(function(seller) {
+
+                }).error(function() {
+                    //TODO: implement error notification
+                });
+            });
+        };
+        
+        $scope.selectProduct = function selectProduct(id) {
+            EditProductDlg.show().then(function(product) {
+                AppResource.updateProduct(sellerID, id, product).success(function(seller) {
+
+                }).error(function() {
+                    //TODO: implement error notification
+                });
+            });
+        };
+	
 });
