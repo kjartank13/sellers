@@ -5,10 +5,12 @@ angular.module("project3App").controller("SellerDetailsController",
 		var sellerID = Number($routeParams.id);
 		var bestProducts = [];
 		var allProducts = [];
+		var seller;
 		//$scope.bestproducts
 
 		AppResource.getSellerDetails(sellerID).success(function getSellerDetails(currSeller) {
 			$scope.currSeller = currSeller;
+			seller = currSeller;
 		});
 
 		AppResource.getSellerProducts(sellerID).success(function getTopTen(products) {

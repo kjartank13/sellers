@@ -1,10 +1,15 @@
 "use strict";
 
 angular.module("project3App").controller("EditSellerDlgController", 
-function EditSellerDlgController($scope) {
+function EditSellerDlgController($scope, $routeParams, AppResource) {
     console.log("Ég komst í EditSellerDlgController");
     
-    // TODO: Láta núverandi upplýsingar vera í input-unum
+    var sellerID = $routeParams.id;
+    var seller;
+    AppResource.getSellerDetails(Number(sellerID)).success(function getSellerDetails(currSeller) {
+            $scope.seller = currSeller;
+
+    });
 
     $scope.onOk = function onOk() {
     //TODO: validation
