@@ -22,6 +22,10 @@
 			"SaveFailed": "Því miður tókst ekki að bæta við nýjum seljanda"
 		}
 	},
+	"seller-edit-dlg": {
+		"Title": "Breyta söluaðila",
+		"update": "Uppfæra"
+	},
 	"sellers": {
 		"Title": "Seljendur",
 		"Category": "Flokkur",

@@ -3,6 +3,7 @@
 angular.module("project3App").controller("SellerDlgController", 
 	function SellerDlgController($scope) {
 
+
 		$scope.onOk = function onOk() {
 			//TODO: validation
 			if ($scope.seller.name.length === 0) {
