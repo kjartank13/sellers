@@ -1,0 +1,23 @@
+{
+	"seller-details": {
+		"AllProducts": "Allar vörur",
+		"Top10": "Topp 10 vörur",
+		"Name": "Nafn",
+		"NumberSales": "Fjöldi sala",
+		"Messages": {
+			"LoadFailed": "Ekki tókst að sækja lista yfir seljendur",
+			"SaveSucceeded": "Nýjum seljanda hefur verið bætt við",
+			"SaveFailed": "Því miður tókst ekki að bæta við nýjum seljanda"
+		}
+	},
+	"sellers": {
+		"Title": "Seljendur",
+		"Category": "Flokkur",
+		"Name": "Nafn",
+		"Messages": {
+			"LoadFailed": "Ekki tókst að sækja lista yfir seljendur",
+			"SaveSucceeded": "Nýjum seljanda hefur verið bætt við",
+			"SaveFailed": "Því miður tókst ekki að bæta við nýjum seljanda"
+		}
+	}
+}

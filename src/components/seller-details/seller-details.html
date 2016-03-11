@@ -1,0 +1,59 @@
+
+<div class="aboutSeller">
+	<img class="profileImage" ng-src="{{ currSeller.imagePath }}" alt="sellerpic">
+
+	{{ currSeller.name }} -
+	{{ currSeller.category }}
+
+</div>
+<br>
+
+
+<div class="tabs">
+	<ul class="tablist" ng-init="tab = 1">
+	    <li class="tabitem" ng-class="{active:tab===1}">
+	    	<a href ng-click="tab = 1">{{"seller-details.AllProducts" | translate}}</a>
+	    </li>
+	    <li class="tabitem">
+	    	<a href ng-click="tab = 2">{{"seller-details.Top10" | translate}}</a>
+	    </li>
+	    
+	    <br><br>
+	   	
+	   	<br>
+
+	   	<div class="tab1div">
+	   		
+		   	<ul class="allProductsList" ng-show="tab === 1" ng-repeat="product in allProducts">
+		   		<li class="allProductsItem"> 
+		   			
+		   			<div class="itemDetails">
+			   			<img class="productImage" ng-src="{{ product.imagePath }}" alt="productpic">
+			   			<br>
+			   			<div class="prodName">{{ product.name }}</div> 
+			   			<div class="prodPrice">{{ product.price }} ISK</div>
+		   			</div>
+
+		   		</li>
+		   	</ul>
+
+	   	</div>
+	   	
+	   	<br>
+
+	   	<div class="tab2div">
+		   	<table class="table table-striped table-hover" ng-show="tab === 2">
+	    		<tr>
+		    		<th columnName="Name">{{"seller-details.Name" | translate}}</th>
+		    		<th columnName="SalesNumber">{{"seller-details.NumberSales" | translate}}</th>
+	    		</tr>
+	    		<tr ng-repeat="product in bestProducts">
+	    			<td>{{ product.name }}</td>
+	    			<td>{{ product.quantitySold }}</td>
+	   			 </tr>
+			</table>
+		</div>
+
+	</ul>
+
+</div>

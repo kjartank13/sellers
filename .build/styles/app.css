@@ -1,0 +1,71 @@
+
+.Sellers .tabcontent {
+  font-size: 22px;
+  font-weight: bold;
+  font-style: italic;
+  color: #3e3e3e;
+  margin: 18px;
+}
+.Sellers .tablist {
+  float: left;
+  border-radius: 5px;
+  border: solid 1px #c6c6c6;
+  padding: 7px 11px;
+  background-color: #f8f8f8;
+}
+.Sellers .tabitem {
+  float: left;
+  background-color: #c8c8c8;
+  padding: 5px 19px;
+  margin: 5px 2px 5px 0px;
+  color: black;
+  list-style: none;
+}
+.Sellers .tabitem:hover,
+.Sellers .tabitem:hover a {
+  background-color: #06b306;
+  color: white;
+}
+.Sellers .tabitem a {
+  text-decoration: none;
+  color: white;
+  font-size: 21px;
+  font-style: italic;
+  text-shadow: 1px 0px 3px #9d9d9d;
+}
+.Sellers .tabitem:nth-child(1) {
+  border-radius: 4px 0px 0px 4px;
+  margin-left: 1px;
+}
+.Sellers .tabitem:nth-child(3) {
+  border-radius: 0px 4px 4px 0px;
+}
+.Sellers .active {
+  background-color: #06b306;
+}
+.Sellers .profileImage {
+  height: 200px;
+  width: auto;
+  border-style: solid;
+}
+.Sellers .itemDetails {
+  border-style: solid;
+}
+.Sellers .itemDetails .productImage {
+  padding-left: 50px;
+  height: 80px;
+  width: auto;
+}
+.Sellers .itemDetails .prodName {
+  text-align: left;
+}
+.Sellers .itemDetails .prodPrice {
+  text-align: right;
+}
+.Sellers .allProductsList {
+  list-style: none;
+}
+.Sellers .allProductsItem {
+  display: inline;
+}
+
