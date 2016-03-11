@@ -1,0 +1,14 @@
+{
+	"seller-dlg" : {
+		"Title":                     "New seller",
+		"Category":					 "Category",
+		"Name":                      "Nafn",
+		"ImgPath":					 "Image path",
+		"Cancel":					 "Cancel",
+		"Messages" : {
+			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
+			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",
+			"SaveFailed":            "Því miður tókst ekki að bæta við nýjum seljanda"
+		}
+	}
+}

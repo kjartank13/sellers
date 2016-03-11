@@ -1,19 +1,28 @@
-<!-- <div class="modal-header">
-<h1>Modal header</h1>
-</div>
 
-<div class="modal-body">
-<h2>Modal body</h2>
-</div>
 
-<div class="modal-footer">
+		<div class="modal-content">
+
+		<div class="modal-header">
+			<h1>{{"seller-dlg.Title" | translate}}</h1>
+		</div>
+
+		<div class="modal-body">
+			{{"seller-dlg.Name" | translate}}: <input class="newSellerInput" type="text" ng-model="seller.name" />
+			<br>
+			<br>
+			{{"seller-dlg.Category" | translate}}: <input class="newSellerInput" type="text" ng-model="seller.category" />
+			<br>
+			<br>
+			{{"seller-dlg.ImgPath" | translate}}: <input class="newSellerInput" type="text" ng-model="seller.imagePath" />
+			<br>
+			<br>
+			<button class="btn btn-primary" ng-click="onOk()">OK</button>
+			<button class="btn btn-primary"ng-click="onCancel()">{{"seller-dlg.Cancel" | translate}}</button>
+		</div>
+		<br>
+	</div>
+
+<!-- <div class="modal-footer">
 <h3>Modal footer</h3>
 </div> -->
 
-<input type="text" ng-model="seller.name" />
-<br>
-<input type="text" ng-model="seller.category" />
-<br>
-<input type="text" ng-model="seller.imagePath" />
-
-<button ng-click="onOk()">OK</button>

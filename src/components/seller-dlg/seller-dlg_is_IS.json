@@ -1,0 +1,14 @@
+{
+	"seller-dlg" : {
+		"Title":                     "Nýr söluaðili",
+		"Category":					 "Flokkur",
+		"Name":                      "Nafn",
+		"ImgPath":					 "Slóð á mynd",
+		"Cancel":					 "Hætta við",
+		"Messages" : {
+			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
+			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",
+			"SaveFailed":            "Því miður tókst ekki að bæta við nýjum seljanda"
+		}
+	}
+}
