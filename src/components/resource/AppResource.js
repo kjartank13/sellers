@@ -118,6 +118,7 @@ function AppResource() {
 		},
 
 		updateSeller: function(id, seller) {
+            console.log("Hello from the resource: " + seller);
 			if (mockResource.successUpdateSeller) {
 				var current = _.find(mockSellers, function(o){ return o.id === id;});
 				if (current !== null) {

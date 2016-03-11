@@ -48,7 +48,6 @@ angular.module("project3App").controller("SellerDetailsController",
         
         $scope.onEditSeller = function onEditSeller() {
 		EditSellerDlg.show().then(function(seller) {
-            console.log("Controller: " + seller);
 			AppResource.updateSeller(sellerID, seller).success(function(seller) {
 				// var newSeller = seller;
 				// $scope.sellers.push(seller);

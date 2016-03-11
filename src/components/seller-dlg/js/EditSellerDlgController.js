@@ -1,14 +1,14 @@
 "use strict";
 
 angular.module("project3App").controller("EditSellerDlgController", 
-function EditSellerDlgController($scope) {
-    console.log("Ég komst í EditSellerDlgController");
+function EditSellerDlgController($scope, $routeParams, AppResource) {
+    var sellerId = Number($routeParams.id);
     
-    // TODO: Láta núverandi upplýsingar vera í input-unum
-
+    AppResource.getSellerDetails(sellerId).success(function getSellerDetails(currSeller) {
+        $scope.seller = currSeller;
+    });
     $scope.onOk = function onOk() {
     //TODO: validation
-        console.log($scope.seller);
         if ($scope.seller.name.length === 0) {
             //birta validation skilaboð
         }
