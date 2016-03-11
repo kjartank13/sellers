@@ -10,5 +10,8 @@
 			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",
 			"SaveFailed":            "Því miður tókst ekki að bæta við nýjum seljanda"
 		}
-	}
+	},
+    "seller-edit-dlg" : {
+        "update": "Uppfæra"
+    }
 }

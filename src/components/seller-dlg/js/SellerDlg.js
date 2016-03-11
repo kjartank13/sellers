@@ -14,3 +14,30 @@ angular.module("project3App").factory("SellerDlg",
 	};
 });
 
+angular.module("project3App").factory("EditSellerDlg", 
+	function EditSellerDlg($uibModal) {
+	return {
+		show: function () {
+			var modalInstance = $uibModal.open({
+				size: "sm",
+				controller: "EditSellerDlgController",
+				templateUrl: "components/seller-dlg/seller-edit-dlg.tpl.html"
+			});
+			return modalInstance.result;
+		}
+	};
+});
+
+angular.module("project3App").factory("ProductDlg", 
+	function ProductDlg($uibModal) {
+	return {
+		show: function () {
+			var modalInstance = $uibModal.open({
+				size: "sm",
+				controller: "ProductDlgController",
+				templateUrl: "components/seller-dlg/product-dlg.tpl.html"
+			});
+			return modalInstance.result;
+		}
+	};
+});
