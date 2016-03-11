@@ -1,19 +1,14 @@
 "use strict";
 
-angular.module("project3App")
-.factory("SellerDlg", function($modal) {
+angular.module("project3App").factory("SellerDlg", 
+	function SellerDlg($uibModal) {
 	return {
-		show: function show(entity) {
-			var dlg = $modal.open({
+		show: function () {
+			var modalInstance = $uibModal.open({
 				controller: "SellerDlgController",
-				templateUrl: "seller-dlg/seller-dlg.tpl.html",
-				resolve: {
-					$entity: function() {
-						return entity;
-					}
-				}
+				templateUrl: "components/seller-dlg/seller-dlg.tpl.html"
 			});
-			return dlg.result;
+			return modalInstance.result;
 		}
 	};
 });

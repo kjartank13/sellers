@@ -110,6 +110,7 @@ function AppResource() {
 		},
 
 		addSeller: function addSeller(seller) {
+			seller.id = mockSellers.length + 1;
 			if (mockResource.successAddSeller) {
 				mockSellers.push(seller);
 			}

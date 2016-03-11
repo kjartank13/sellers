@@ -1,6 +1,8 @@
 <!-- <h1>{{ "sellers.Title" | translate}}</h1> -->
 <h1 class="title">{{"sellers.Title" | translate}}</h1>
 
+<button ng-click="onAddSeller()">Add</button>
+
 <table class="table table-striped table-hover">
     <tr table-sort="Name">
     	<th columnName="Name">
@@ -10,6 +12,7 @@
     		{{"sellers.Category" | translate}}
     	</th>
     </tr>
+    <!-- <tr ng-repeat="seller in sellers track by $index"> -->
     <tr ng-repeat="seller in sellers">
     	<td ng-click="selectSeller(seller)">{{ seller.name }}</td>
     	<td ng-click="selectSeller(seller)">{{ seller.category }}</td>
