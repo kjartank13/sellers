@@ -3,7 +3,7 @@
 angular.module("project3App")
 .factory("SellerDlg", function($modal) {
 	return {
-		SellerDlg.show: function show(entity) {
+		show: function show(entity) {
 			var dlg = $modal.open({
 				controller: "SellerDlgController",
 				templateUrl: "seller-dlg/seller-dlg.tpl.html",
@@ -14,7 +14,7 @@ angular.module("project3App")
 				}
 			});
 			return dlg.result;
-		};
+		}
 	};
 });
 
