@@ -15,6 +15,7 @@ function SellersController($scope, AppResource, $location, SellerDlg) {
 
 	$scope.onAddSeller = function onAddSeller() {
 		SellerDlg.show().then(function(seller) {
+            console.log(seller);
 			AppResource.addSeller(seller).success(function(seller) {
 				// var newSeller = seller;
 				// $scope.sellers.push(seller);

@@ -12,6 +12,7 @@
 		}
 	},
     "seller-edit-dlg" : {
+        "Title": "Breyta söluaðila",
         "update": "Uppfæra"
     }
 }

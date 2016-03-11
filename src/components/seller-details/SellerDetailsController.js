@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("project3App").controller("SellerDetailsController",
-	function SellerDetailsController($scope, AppResource, $location, $routeParams, EditSellerDlg, ProductDlg) {
+	function SellerDetailsController($scope, AppResource, $location, $routeParams, EditSellerDlg) {
 		var sellerID = Number($routeParams.id);
 		var bestProducts = [];
 		var allProducts = [];
@@ -36,19 +36,20 @@ angular.module("project3App").controller("SellerDetailsController",
 			}
 		});
         
-        $scope.onAddProduct = function onAddProduct() {
-		EditSellerDlg.show().then(function(id, product) {
+        /*$scope.onAddProduct = function onAddProduct() {
+		ProductDlg.show().then(function(id, product) {
 			AppResource.addSellerProduct(id, product).success(function(product) {
 				// var newSeller = seller;
 				// $scope.sellers.push(seller);
 			}).error(function() {
 				//TODO: implement error notification
 			});
-		});
+		});*/
         
         $scope.onEditSeller = function onEditSeller() {
-		ProductDlg.show().then(function(id, seller) {
-			AppResource.updateSeller(id, seller).success(function(seller) {
+		EditSellerDlg.show().then(function(seller) {
+            console.log("Controller: " + seller);
+			AppResource.updateSeller(sellerID, seller).success(function(seller) {
 				// var newSeller = seller;
 				// $scope.sellers.push(seller);
 			}).error(function() {
@@ -56,6 +57,4 @@ angular.module("project3App").controller("SellerDetailsController",
 			});
 		});
 	};
-	};
-		
-	});
+});
