@@ -1,16 +1,16 @@
 "use strict";
 
 angular.module("project3App").controller("SellerDetailsController",
-	function SellerDetailsController($scope, AppResource, $location, $routeParams, EditSellerDlg, ProductDlg) {
+	function SellerDetailsController($scope, AppResource, $location, $routeParams, EditSellerDlg, ProductDlg, EditProductDlg) {
 		var sellerID = Number($routeParams.id);
 		var bestProducts = [];
 		var allProducts = [];
-		var seller;
+		// var seller;
 		//$scope.bestproducts
 
 		AppResource.getSellerDetails(sellerID).success(function getSellerDetails(currSeller) {
 			$scope.currSeller = currSeller;
-			seller = currSeller;
+			// seller = currSeller;
 		});
 
 		AppResource.getSellerProducts(sellerID).success(function getTopTen(products) {
@@ -41,7 +41,7 @@ angular.module("project3App").controller("SellerDetailsController",
         
         $scope.onEditSeller = function onEditSeller() {
 		EditSellerDlg.show().then(function(seller) {
-            console.log("Controller: " + seller);
+            console.log("Controller: " + seller.name);
 			AppResource.updateSeller(sellerID, seller).success(function(seller) {
 				// var newSeller = seller;
 				// $scope.sellers.push(seller);
@@ -63,4 +63,43 @@ angular.module("project3App").controller("SellerDetailsController",
 		});
 
 	};
+
+	var ottarProduct;
+	$scope.onEditProduct = function onEditProduct(product) {
+		ottarProduct = product;
+		EditProductDlg.show(product).then(function(product) {
+				if (product.id === undefined)
+				{	
+					product.id = ottarProduct.id;
+				}
+				if (product.name === undefined)
+				{	
+					product.name = ottarProduct.name;
+				}
+				if (product.price === undefined)
+				{	
+					product.price = ottarProduct.price;
+				}
+				if (product.quantitySold === undefined)
+				{	
+					product.quantitySold = ottarProduct.quantitySold;
+				}
+				if (product.quantityInStock === undefined)
+				{	
+					product.quantityInStock = ottarProduct.quantityInStock;
+				}
+				if (product.imagePath === undefined)
+				{	
+					product.imagePath = ottarProduct.imagePath;
+				}
+			AppResource.updateProduct(sellerID, product.id, product).success(function(product) {
+				console.log("New product! " + product.name);
+			}).error(function() {
+				//TODO: implement error notification
+			});
+		});
+
+	};
+
+
 });

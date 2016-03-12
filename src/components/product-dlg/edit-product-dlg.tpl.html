@@ -1,0 +1,29 @@
+<div class="modal-content">
+
+		<div class="modal-header">
+			<!-- <h1>{{"product-dlg.Title" | translate}}</h1> -->
+			<h1>Edit product</h1>
+		</div>
+
+		<div class="modal-body">
+
+			{{"product-dlg.Name" | translate}}: <input class="newProductInput" type="text" ng-model="newprod.name"/>
+			<br>
+			<br>
+			{{"product-dlg.Price" | translate}}: <input class="newProductInput" type="text" ng-model="newprod.price"/>
+			<br>
+			<br>
+			{{"product-dlg.QtySold" | translate}}: <input class="newProductInput" type="text" ng-model="newprod.quantitySold"/>
+			<br>
+			<br>
+			{{"product-dlg.QtyStock" | translate}}: <input class="newProductInput" type="text" ng-model="newprod.quantityInStock"/>
+			<br>
+			<br>
+			{{"product-dlg.ImgPath" | translate}}: <input class="newProductInput" type="text" ng-model="newprod.imagePath"/>
+			<br>
+			<br>
+			<button class="btn btn-primary" ng-click="onOk()">OK</button>
+			<button class="btn btn-primary"ng-click="onCancel()">{{"seller-dlg.Cancel" | translate}}</button>
+		</div>
+		<br>
+	</div>

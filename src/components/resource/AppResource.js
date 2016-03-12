@@ -78,7 +78,7 @@ function AppResource() {
 					fn(data);
 				}
 				return {
-					error: function f() {
+					error: function (f) {
 						if (!condition) {
 							f();
 						}
@@ -99,6 +99,7 @@ function AppResource() {
 		successGetSellerProducts:   true,
 		successAddSellerProduct:    true,
 		successUpdateSellerProduct: true,
+		successUpdateProduct:    	true, 
 
 		// Below are the real functions this object should support.
 		// The current implementation is of course just a mock
@@ -176,6 +177,7 @@ function AppResource() {
 		updateProduct: function(sId, pId, product) {
 			if (mockResource.successUpdateProduct) {
 				var current = _.find(mockProducts, function(o){ return o.product.id === pId;});
+				console.log(current);
 				if (current !== null) {
 					current.id = sId;
                     current.product.id = pId;
