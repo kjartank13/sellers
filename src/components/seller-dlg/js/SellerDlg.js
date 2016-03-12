@@ -23,7 +23,6 @@ angular.module("project3App").factory("EditSellerDlg",
 				controller: "EditSellerDlgController",
 				templateUrl: "components/seller-dlg/seller-edit-dlg.tpl.html"
 			});
-            console.log("Ég komst í EditSellerDlg: " + modalInstance.result);
 			return modalInstance.result;
 		}
 	};

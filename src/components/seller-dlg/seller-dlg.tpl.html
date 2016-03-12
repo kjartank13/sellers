@@ -1,27 +1,22 @@
-
-
-		<div class="modal-content">
-
-		<div class="modal-header">
-			<h1>{{"seller-dlg.Title" | translate}}</h1>
-		</div>
-
-		<div class="modal-body">
-
-			{{"seller-dlg.Name" | translate}}: <input class="newSellerInput" type="text" ng-model="seller.name"/>
-			<br>
-			<br>
-			{{"seller-dlg.Category" | translate}}: <input class="newSellerInput" type="text" ng-model="seller.category" />
-			<br>
-			<br>
-			{{"seller-dlg.ImgPath" | translate}}: <input class="newSellerInput" type="text" ng-model="seller.imagePath" />
-			<br>
-			<br>
-			<button class="btn btn-primary" ng-click="onOk()">OK</button>
-			<button class="btn btn-primary"ng-click="onCancel()">{{"seller-dlg.Cancel" | translate}}</button>
-		</div>
-		<br>
-	</div>
+<div class="modal-content">
+    <div class="modal-header">
+        <h1>{{"seller-dlg.Title" | translate}}</h1>
+    </div>
+    <div class="modal-body">
+        {{"seller-dlg.Name" | translate}}: <input class="newSellerInput" type="text" ng-model="seller.name" />
+        <br>
+        <br>
+        {{"seller-dlg.Category" | translate}}: <input class="newSellerInput" type="text" ng-model="seller.category" />
+        <br>
+        <br>
+        {{"seller-dlg.ImgPath" | translate}}: <input class="newSellerInput" type="text" ng-model="seller.imagePath" />
+        <br>
+        <br>
+        <button class="btn btn-primary" ng-click="onOk()">OK</button>
+        <button class="btn btn-primary"ng-click="onCancel()">{{"seller-dlg.Cancel" | translate}}</button>
+    </div>
+    <br>
+</div>
 
 <!-- <div class="modal-footer">
 <h3>Modal footer</h3>

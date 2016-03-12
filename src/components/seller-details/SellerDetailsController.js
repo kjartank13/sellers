@@ -53,7 +53,6 @@ angular.module("project3App").controller("SellerDetailsController",
 	};
 
 	$scope.onAddProduct = function onAddProduct() {
-		console.log("In onEditSeller");
 		ProductDlg.show().then(function(newprod) {
 			console.log("newprod = " + newprod);
 			AppResource.addSellerProduct(sellerID, newprod).success(function(newprod) {
