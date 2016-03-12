@@ -1,9 +1,12 @@
 {
-	"sellers" : {
-		"Title":                     "Seljendur",
-		"Category":					 "Flokkur",
+	"product-dlg" : {
+		"Title":                     "Ný vara",
+		"Price":					 "Verð",
 		"Name":                      "Nafn",
-		"NewSeller":				 "Nýr Seljandi",
+		"ImgPath":					 "Slóð á mynd",
+		"Cancel":					 "Hætta við",
+		"QtySold":					 "Fjöldi seldur",
+		"QtyStock":					 "Fjöldi á lager",
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
 			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",

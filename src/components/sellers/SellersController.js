@@ -2,7 +2,7 @@
 "use strict";
 
 angular.module("project3App").controller("SellersController",
-function SellersController($scope, AppResource, $location, SellerDlg) {
+function SellersController($scope, AppResource, $location, SellerDlg, centrisNotify) {
 	// TODO: load data from AppResource! Also, add other methods, such as to
 	// add/update sellers etc.
 	AppResource.getSellers().success(function getSellers(sellers) {
@@ -20,6 +20,7 @@ function SellersController($scope, AppResource, $location, SellerDlg) {
 				// var newSeller = seller;
 				// $scope.sellers.push(seller);
 			}).error(function() {
+				centrisNotify.error("sellers.Messages.SaveFailed");
 				//TODO: implement error notification
 			});
 		});

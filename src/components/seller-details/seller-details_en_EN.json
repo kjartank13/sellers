@@ -4,6 +4,8 @@
 		"Top10":					 "Top 10 products",
 		"Name":					     "Name",
 		"NumberSales":				 "Number of sales",
+		"EditSeller":				 "Edit Seller",
+		"NewProduct":				 "New Product",
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
 			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",

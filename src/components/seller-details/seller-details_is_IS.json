@@ -4,6 +4,8 @@
 		"Top10":					 "Topp 10 vörur",
 		"Name":					     "Nafn",
 		"NumberSales":				 "Fjöldi sala",
+		"EditSeller":				 "Breyta seljanda",
+		"NewProduct":				 "Ný Vara",
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
 			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",

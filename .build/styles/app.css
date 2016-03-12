@@ -1,3 +1,10 @@
+.Sellers .langButtons {
+  float: right;
+}
+
+.newProductInput {
+  float: right;
+}
 
 .Sellers .tabcontent {
   font-size: 22px;

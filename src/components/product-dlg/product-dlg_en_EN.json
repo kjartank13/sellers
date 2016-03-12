@@ -1,18 +1,16 @@
 {
-	"seller-dlg" : {
-		"Title":                     "New seller",
-		"Category":					 "Category",
+	"product-dlg" : {
+		"Title":                     "New product",
+		"Price":					 "Price",
 		"Name":                      "Name",
 		"ImgPath":					 "Image path",
 		"Cancel":					 "Cancel",
+		"QtySold":					 "Quantity sold",
+		"QtyStock":					 "Quantity in stock",
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
 			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",
 			"SaveFailed":            "Því miður tókst ekki að bæta við nýjum seljanda"
 		}
-	},
-    "seller-edit-dlg" : {
-        "Title": "Edit seller",
-        "update": "Update"
-    }
+	}
 }

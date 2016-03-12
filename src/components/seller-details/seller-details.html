@@ -9,8 +9,8 @@
 <br>
 
 <!--<button class="btn btn-default" ng-click="onAddProduct()">Add Product</button>-->
-<button class="btn btn-default" ng-click="onEditSeller()">Edit Seller</button>
-<button class="btn btn-default" ng-click="onAddProduct()">Add Product</button>
+<button class="btn btn-default" ng-click="onEditSeller()">{{"seller-details.EditSeller" | translate}}</button>
+<button class="btn btn-default" ng-click="onAddProduct()">{{"seller-details.NewProduct" | translate}}</button>
 
 <div class="tabs">
 	<ul class="tablist" ng-init="tab = 1">
@@ -27,18 +27,11 @@
 
 	   	<div class="tab1div">
 	   		
-		   	<ul class="allProductsList" ng-show="tab === 1" ng-repeat="product in allProducts">
-		   		<li class="allProductsItem"> 
-		   			
-		   			<div class="itemDetails">
-			   			<img class="productImage" ng-src="{{ product.imagePath }}" alt="productpic">
-			   			<br>
-			   			<div class="prodName">{{ product.name }}</div> 
-			   			<div class="prodPrice">{{ product.price }} ISK</div>
-		   			</div>
-
-		   		</li>
-		   	</ul>
+		   	<div ng-show="tab === 1" class="img-thumbnails clearfix" ng-repeat="product in allProducts" ng-click="selectProduct(product.product.id)" style="float: left; padding: 1em">
+                <img ng-src="{{product.imagePath}}" height="170" width="170" />
+                <h4>{{product.name}}</h4> 
+                <h4>{{product.price}} ISK</h4>
+            </div>
 
 	   	</div>
 	   	

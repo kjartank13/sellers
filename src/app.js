@@ -13,4 +13,6 @@ angular.module("project3App", ["ngRoute", "ui.bootstrap", "sharedServices"])
 		redirectTo: "/"
 	});
 
+	// $translate.use("is");
+
 });
