@@ -6,10 +6,6 @@
   float: right;
 }
 
-.newSellerInput {
-  float: right;
-}
-
 .Sellers .tabcontent {
   font-size: 22px;
   font-weight: bold;
@@ -78,5 +74,9 @@
 }
 .Sellers .allProductsItem {
   display: inline;
+}
+
+.newSellerInput {
+  float: right;
 }
 

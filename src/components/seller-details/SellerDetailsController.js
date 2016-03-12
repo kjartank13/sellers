@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("project3App").controller("SellerDetailsController",
-	function SellerDetailsController($scope, AppResource, $location, $routeParams, EditSellerDlg, ProductDlg, EditProductDlg) {
+	function SellerDetailsController($scope, centrisNotify, AppResource, $location, $routeParams, EditSellerDlg, ProductDlg, EditProductDlg) {
 		var sellerID = Number($routeParams.id);
 		var bestProducts = [];
 		var allProducts = [];
@@ -56,7 +56,6 @@ angular.module("project3App").controller("SellerDetailsController",
 		ProductDlg.show().then(function(newprod) {
 			console.log("newprod = " + newprod);
 			AppResource.addSellerProduct(sellerID, newprod).success(function(newprod) {
-				console.log("Inside AppResource addproduct function: " + newprod.name);
 			}).error(function() {
 				//TODO: implement error notification
 			});
