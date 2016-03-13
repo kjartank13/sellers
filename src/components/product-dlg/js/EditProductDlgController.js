@@ -1,18 +1,24 @@
 "use strict";
 
 angular.module("project3App").controller("EditProductDlgController", 
-	function ProductDlgController($scope, $routeParams, centrisNotify) {
+	function ProductDlgController($scope, centrisNotify) {
 
-		// $scope.newprod.id = $routeParams.id;
 
 		$scope.onOk = function onOk() {
 			//TODO: validation
-			
-			$scope.$close($scope.newprod);
+			if ($scope.newprod.name === undefined || $scope.newprod.price === undefined)
+			{	
+				centrisNotify.error("product-dlg.Messages.SaveFailed");
+			}
+			else
+			{
+				centrisNotify.successWithParam("product-dlg.Messages.SaveSucceeded");
+				$scope.$close($scope.newprod);
+			}
 		};
 
-		$scope.onCancel = function onCancel() {
-			$scope.$dismiss();
-		};
+		// $scope.onCancel = function onCancel() {
+		// 	$scope.$dismiss();
+		// };
 
 	});

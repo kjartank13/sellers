@@ -45,8 +45,10 @@ angular.module("project3App").controller("SellerDetailsController",
 			AppResource.updateSeller(sellerID, seller).success(function(seller) {
 				// var newSeller = seller;
 				// $scope.sellers.push(seller);
+				centrisNotify.success("product-dlg.Messages.SaveSucceeded");
 			}).error(function() {
 				//TODO: implement error notification
+				centrisNotify.error("product-dlg.Messages.SaveFailed");
 			});
 		});
 

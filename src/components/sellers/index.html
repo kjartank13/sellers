@@ -5,15 +5,15 @@
 
 <table class="table table-striped table-hover">
     <tr table-sort="Name">
-    	<th columnName="Name">
+    	<th data-columnName="Name">
     		{{"sellers.Name" | translate}}
     	</th>
-    	<th columnName="Category">
+    	<th data-columnName="Category">
     		{{"sellers.Category" | translate}}
     	</th>
     </tr>
     <!-- <tr ng-repeat="seller in sellers track by $index"> -->
-    <tr ng-repeat="seller in sellers">
+    <tr ng-repeat="seller in sellers | orderBy:predicate:reverse">
     	<td ng-click="selectSeller(seller)">{{ seller.name }}</td>
     	<td ng-click="selectSeller(seller)">{{ seller.category }}</td>
     </tr>

@@ -8,9 +8,10 @@
 		"QtySold":					 "Fjöldi seldur",
 		"QtyStock":					 "Fjöldi á lager",
 		"Messages" : {
-			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
-			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",
-			"SaveFailed":            "Því miður tókst ekki að bæta við nýjum seljanda"
+			"LoadFailed":            "Ekki tókst að sækja lista yfir vörur",
+			"SaveSucceeded":         "Vistun Tókst",
+			"SaveFailed":            "Því miður tókst ekki að bæta við nýrri vöru",
+			"EditFailed":			 "Því miður tókst ekki að breyta vöru"
 		}
 	}
 }
