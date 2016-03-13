@@ -42,9 +42,9 @@
 
 	   	<div class="tab2div">
 		   	<table class="table table-striped table-hover" ng-show="tab === 2">
-	    		<tr table-sort="Name">
-		    		<th data-columnName="Name">{{"seller-details.Name" | translate}}</th>
-		    		<th data-columnName="SalesNumber">{{"seller-details.NumberSales" | translate}}</th>
+	    		<tr table-sort="name">
+		    		<th data-columnName="name">{{"seller-details.Name" | translate}}</th>
+		    		<th data-columnName="quantitySold">{{"seller-details.NumberSales" | translate}}</th>
 	    		</tr>
 	    		<tr ng-repeat="product in bestProducts | orderBy:predicate:reverse">
 	    			<td>{{ product.name }}</td>
