@@ -2,11 +2,14 @@
 "use strict";
 
 angular.module("project3App").controller("SellersController",
-function SellersController($scope, AppResource, $location, SellerDlg, centrisNotify) {
+function SellersController($scope, AppResource, $location, SellerDlg) {
 	// TODO: load data from AppResource! Also, add other methods, such as to
 	// add/update sellers etc.
+	var sellers;
+
 	AppResource.getSellers().success(function getSellers(sellers) {
 		$scope.sellers = sellers;
+		sellers = sellers;
 	});
 
 	$scope.selectSeller = function selectSeller(seller) {

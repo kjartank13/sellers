@@ -6,9 +6,9 @@ angular.module("project3App").controller("ProductDlgController",
 
 		$scope.onOk = function onOk() {
 			//TODO: validation
-			if ($scope.newprod.name === undefined) {
-				centrisNotify.error("product-dlg.Messages.EditFailed");
-				$scope.$dismiss();
+			if ($scope.newprod === undefined || $scope.newprod.name === undefined || isNaN($scope.newprod.price) || isNaN($scope.newprod.quantitySold) || isNaN($scope.newprod.quantityInStock)) {
+				centrisNotify.error("product-dlg.Messages.SaveFailed");
+				// $scope.$dismiss();
 			}else{
 				centrisNotify.success("product-dlg.Messages.SaveSucceeded");
 				$scope.$close($scope.newprod);

@@ -6,6 +6,10 @@ angular.module("project3App").controller("SellerDlgController",
 
 		$scope.onOk = function onOk() {
 			//TODO: validation
+			if ($scope.seller === undefined)
+			{
+				centrisNotify.error("sellers.Messages.SaveFailed");
+			}
 			if ($scope.seller.name === undefined || $scope.seller.category === undefined || !isNaN($scope.seller.name) || !isNaN($scope.seller.category)) {
 				centrisNotify.error("sellers.Messages.SaveFailed");
 				// $scope.$dismiss();

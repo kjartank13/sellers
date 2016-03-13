@@ -17,6 +17,16 @@ describe("SellersController unit tests", function() {
 
 
 
+	var testSeller = {
+		id: 		100,
+		name: 	   "Kjarri",
+		category:  "Vefforritun",
+		imagePath: "http://i.imgur.com/B7qbFh5.jpg"
+	};
+
+
+
+
 	beforeEach(inject(function($rootScope, $controller, $injector, _$location_) {
 		scope = $rootScope.$new();
 		$location = _$location_;
@@ -48,7 +58,11 @@ describe("SellersController unit tests", function() {
 		scope.selectSeller(testSeller);
 		expect($location.path).toHaveBeenCalledWith("/" + testSeller.id);
 	});
-
+    
+	it ("should add seller to the list", function() {
+		
+		expect(false).toBe(true);
+	});
 
 
 });
