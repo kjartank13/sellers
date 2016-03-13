@@ -4,7 +4,6 @@ angular.module("project3App").controller("SellerDetailsController",
 	function SellerDetailsController($scope, centrisNotify, AppResource, $location, $routeParams, EditSellerDlg, ProductDlg, EditProductDlg) {
 		var sellerID = Number($routeParams.id);
 		var bestProducts = [];
-		var allProducts = [];
 		// var seller;
 		//$scope.bestproducts
 
@@ -14,8 +13,7 @@ angular.module("project3App").controller("SellerDetailsController",
 		});
 
 		AppResource.getSellerProducts(sellerID).success(function getTopTen(products) {
-			allProducts = products;
-			$scope.allProducts = allProducts;
+			$scope.allProducts = products;
 			if (products.length > 0)
 			{
 				products.sort(function(a, b) {
@@ -65,7 +63,7 @@ angular.module("project3App").controller("SellerDetailsController",
 	//var ottarProduct;
 	$scope.onEditProduct = function onEditProduct(product) {
 		//ottarProduct = product;
-        $location.search('product', product.id);
+        $location.search('product', product);
         
 		EditProductDlg.show(product).then(function(product) {
 				/*if (product.id === undefined)
