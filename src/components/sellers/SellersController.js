@@ -20,6 +20,7 @@ function SellersController($scope, AppResource, $location, SellerDlg) {
 		SellerDlg.show().then(function(seller) {
 			AppResource.addSeller(seller).success(function(seller) {
 			}).error(function() {
+			
 			});
 		});
 	};

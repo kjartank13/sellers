@@ -51,7 +51,7 @@ angular.module("project3App").controller("SellerDetailsController",
 
         $scope.onAddProduct = function onAddProduct() {
             ProductDlg.show().then(function(newprod) {
-                console.log("newprod = " + newprod);
+                $scope.allProducts.push(newprod);
                 AppResource.addSellerProduct(sellerID, newprod).success(function(newprod) {
                 }).error(function() {
                     //TODO: implement error notification

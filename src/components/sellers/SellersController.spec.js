@@ -52,7 +52,7 @@ describe("SellersController unit tests", function() {
 		expect($location.path).toHaveBeenCalledWith("/" + testSeller.id);
 	});
 
-	it ("should add seller to the list", function() {
+	it ("should call addSeller from onAddSeller", function() {
 		
 		expect(false).toBe(true);
 	});
