@@ -21,10 +21,10 @@ describe("SellersDetailsController unit tests", function() {
 		
 	}));
     
-    /*it ("should successfully get current seller", function () {
+    it ("should successfully get current seller", function () {
         console.log(scope.currSeller);
         expect(scope.currSeller).toBeDefined();
-    }); // Virkar ekki*/
+    }); // Virkar ekki
 
 	it ("should successfully get list of products", function () {
         expect(scope.allProducts).toBeDefined();
