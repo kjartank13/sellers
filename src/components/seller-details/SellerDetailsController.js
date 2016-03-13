@@ -49,6 +49,7 @@ angular.module("project3App").controller("SellerDetailsController",
             ProductDlg.show().then(function(newprod) {
                 console.log("newprod = " + newprod);
                 AppResource.addSellerProduct(sellerID, newprod).success(function(newprod) {
+                    $scope.allProducts.push(newprod);
                 }).error(function() {
                     //TODO: implement error notification
                 });
