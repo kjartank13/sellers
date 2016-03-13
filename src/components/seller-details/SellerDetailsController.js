@@ -4,12 +4,9 @@ angular.module("project3App").controller("SellerDetailsController",
 	function SellerDetailsController($scope, centrisNotify, AppResource, $location, $routeParams, EditSellerDlg, ProductDlg, EditProductDlg) {
 		var sellerID = Number($routeParams.id);
 		var bestProducts = [];
-		// var seller;
-		//$scope.bestproducts
 
 		AppResource.getSellerDetails(sellerID).success(function getSellerDetails(currSeller) {
 			$scope.currSeller = currSeller;
-			// seller = currSeller;
 		});
 
 		AppResource.getSellerProducts(sellerID).success(function getTopTen(products) {
@@ -46,7 +43,6 @@ angular.module("project3App").controller("SellerDetailsController",
                     centrisNotify.error("product-dlg.Messages.SaveFailed");
                 });
             });
-
         };
 
         $scope.onAddProduct = function onAddProduct() {
@@ -57,39 +53,12 @@ angular.module("project3App").controller("SellerDetailsController",
                     //TODO: implement error notification
                 });
             });
-
         };
 
-	//var ottarProduct;
 	$scope.onEditProduct = function onEditProduct(product) {
-		//ottarProduct = product;
         $location.search('product', product);
         
 		EditProductDlg.show(product).then(function(product) {
-				/*if (product.id === undefined)
-				{	
-					product.id = ottarProduct.id;
-				}
-				if (product.name === undefined)
-				{	
-					product.name = ottarProduct.name;
-				}
-				if (product.price === undefined)
-				{	
-					product.price = ottarProduct.price;
-				}
-				if (product.quantitySold === undefined)
-				{	
-					product.quantitySold = ottarProduct.quantitySold;
-				}
-				if (product.quantityInStock === undefined)
-				{	
-					product.quantityInStock = ottarProduct.quantityInStock;
-				}
-				if (product.imagePath === undefined)
-				{	
-					product.imagePath = ottarProduct.imagePath;
-				}*/
 			AppResource.updateProduct(sellerID, product.id, product).success(function(product) {
 				console.log("New product! " + product.name);
 			}).error(function() {
@@ -98,6 +67,4 @@ angular.module("project3App").controller("SellerDetailsController",
 		});
 
 	};
-
-
 });

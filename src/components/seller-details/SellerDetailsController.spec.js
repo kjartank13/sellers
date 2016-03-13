@@ -20,14 +20,22 @@ describe("SellersDetailsController unit tests", function() {
 
 		
 	}));
+    
+    it ("should successfully get current seller", function () {
+        console.log(scope.currSeller);
+        expect(scope.currSeller).toBeDefined();
+    }); // Virkar ekki
 
 	it ("should successfully get list of products", function () {
-			expect(scope.allProducts).toBeDefined();
-		});
+        expect(scope.allProducts).toBeDefined();
+    });
+    
+    it ("should define editSeller function", function () {
+        expect(scope.onEditSeller).toBeDefined();
+    });
 
 	it ("should define onAddProduct function", function() { 
-			expect(scope.onAddProduct).toBeDefined();
-		});
-
+        expect(scope.onAddProduct).toBeDefined();
+    });
 });
 
