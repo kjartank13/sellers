@@ -40,36 +40,35 @@ angular.module("project3App").controller("SellerDetailsController",
         
         
         $scope.onEditSeller = function onEditSeller() {
-		EditSellerDlg.show().then(function(seller) {
-            console.log("Controller: " + seller.name);
-			AppResource.updateSeller(sellerID, seller).success(function(seller) {
-				// var newSeller = seller;
-				// $scope.sellers.push(seller);
-				centrisNotify.success("product-dlg.Messages.SaveSucceeded");
-			}).error(function() {
-				//TODO: implement error notification
-				centrisNotify.error("product-dlg.Messages.SaveFailed");
-			});
-		});
+            EditSellerDlg.show().then(function(seller) {
+                console.log("Controller: " + seller.name);
+                AppResource.updateSeller(sellerID, seller).success(function(seller) {
+                    centrisNotify.success("product-dlg.Messages.SaveSucceeded");
+                }).error(function() {
+                    centrisNotify.error("product-dlg.Messages.SaveFailed");
+                });
+            });
 
-	};
+        };
 
-	$scope.onAddProduct = function onAddProduct() {
-		ProductDlg.show().then(function(newprod) {
-			console.log("newprod = " + newprod);
-			AppResource.addSellerProduct(sellerID, newprod).success(function(newprod) {
-			}).error(function() {
-				//TODO: implement error notification
-			});
-		});
+        $scope.onAddProduct = function onAddProduct() {
+            ProductDlg.show().then(function(newprod) {
+                console.log("newprod = " + newprod);
+                AppResource.addSellerProduct(sellerID, newprod).success(function(newprod) {
+                }).error(function() {
+                    //TODO: implement error notification
+                });
+            });
 
-	};
+        };
 
-	var ottarProduct;
+	//var ottarProduct;
 	$scope.onEditProduct = function onEditProduct(product) {
-		ottarProduct = product;
+		//ottarProduct = product;
+        $location.search('product', product.id);
+        
 		EditProductDlg.show(product).then(function(product) {
-				if (product.id === undefined)
+				/*if (product.id === undefined)
 				{	
 					product.id = ottarProduct.id;
 				}
@@ -92,7 +91,7 @@ angular.module("project3App").controller("SellerDetailsController",
 				if (product.imagePath === undefined)
 				{	
 					product.imagePath = ottarProduct.imagePath;
-				}
+				}*/
 			AppResource.updateProduct(sellerID, product.id, product).success(function(product) {
 				console.log("New product! " + product.name);
 			}).error(function() {
