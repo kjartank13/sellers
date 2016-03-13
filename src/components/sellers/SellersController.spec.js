@@ -8,12 +8,14 @@ describe("SellersController unit tests", function() {
 	var newController;
 	var scope;
 	var $location;
+
 	var testSeller = {
 		id: 		100,
 		name: 	   "Kjarri",
 		category:  "Vefforritun",
 		imagePath: "http://i.imgur.com/B7qbFh5.jpg"
 	};
+
 
 
 
@@ -25,6 +27,7 @@ describe("SellersController unit tests", function() {
 				$scope: scope,
 				AppResource: AppResource,
 				$location: $location
+
 			});
 
 		
@@ -57,3 +60,4 @@ describe("SellersController unit tests", function() {
 
 
 });
+

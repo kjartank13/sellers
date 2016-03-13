@@ -29,4 +29,5 @@ describe("SellersDetailsController unit tests", function() {
 			expect(scope.onAddProduct).toBeDefined();
 		});
 
+
 });
