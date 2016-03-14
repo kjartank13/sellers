@@ -7,20 +7,19 @@ angular.module("project3App").controller("EditProductDlgController",
 
 		$scope.onOk = function onOk() {
 			//TODO: validation
-			if ($scope.newprod === undefined || $scope.newprod.name === undefined || isNaN($scope.newprod.price) || isNaN($scope.newprod.quantitySold) || isNaN($scope.newprod.quantityInStock))
+			if ($scope.newprod === undefined || $scope.newprod.name === undefined || $scope.newprod.price === undefined || $scope.newprod.quantitySold === undefined || $scope.newprod.quantityInStock === undefined)
 			{	
+				centrisNotify.error("product-dlg.Messages.EditFailed");
+			}
+			else if (isNaN($scope.newprod.price) || isNaN($scope.newprod.quantitySold) || isNaN($scope.newprod.quantityInStock))
+			{
 				centrisNotify.error("product-dlg.Messages.EditFailed");
 			}
 			else
 			{
-				centrisNotify.successWithParam("product-dlg.Messages.SaveSucceeded");
+				centrisNotify.success("product-dlg.Messages.SaveSucceeded");
 				$scope.$close($scope.newprod);
 			}
-            history.back();
 		};
-
-		// $scope.onCancel = function onCancel() {
-		// 	$scope.$dismiss();
-		// };
 
 	});

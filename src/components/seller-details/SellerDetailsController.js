@@ -47,11 +47,11 @@ angular.module("project3App").controller("SellerDetailsController",
 
         $scope.onAddProduct = function onAddProduct() {
             ProductDlg.show().then(function(newprod) {
-                console.log("newprod = " + newprod);
+                $scope.allProducts.push(newprod);
                 AppResource.addSellerProduct(sellerID, newprod).success(function(newprod) {
                     $scope.allProducts.push(newprod);
                 }).error(function() {
-                    //TODO: implement error notification
+                    centrisNotify.error("product-dlg.Messages.SaveFailed");
                 });
             });
         };
@@ -61,9 +61,9 @@ angular.module("project3App").controller("SellerDetailsController",
         
 		EditProductDlg.show(product).then(function(product) {
 			AppResource.updateProduct(sellerID, product.id, product).success(function(product) {
-				console.log("New product! " + product.name);
+				
 			}).error(function() {
-				//TODO: implement error notification
+				centrisNotify.error("product-dlg.Messages.SaveFailed");
 			});
 		});
 

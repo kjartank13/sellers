@@ -18,9 +18,4 @@ function EditSellerDlgController($scope, $routeParams, AppResource, centrisNotif
         }
     };
 
-    // $scope.onCancel = function onCancel() {
-    //     $scope.seller = curr;
-    //     $scope.$dismiss();
-    // };
-
 });

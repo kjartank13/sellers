@@ -14,8 +14,7 @@ describe("SellersController unit tests", function() {
 		category:  "Vefforritun",
 		imagePath: "http://i.imgur.com/B7qbFh5.jpg"
 	};
-    
-    
+
 	beforeEach(inject(function($rootScope, $controller, $injector, _$location_) {
 		scope = $rootScope.$new();
 		$location = _$location_;
@@ -26,7 +25,6 @@ describe("SellersController unit tests", function() {
 				$location: $location
 			});
 
-		
 	}));
 
 
@@ -47,8 +45,8 @@ describe("SellersController unit tests", function() {
 		scope.selectSeller(testSeller);
 		expect($location.path).toHaveBeenCalledWith("/" + testSeller.id);
 	});
-    
-	it ("should add seller to the list", function() {
+
+	it ("should call addSeller from onAddSeller", function() {
 		
 		expect(false).toBe(true);
 	});
