@@ -36,9 +36,8 @@ angular.module("project3App").controller("SellerDetailsController",
         
         $scope.onEditSeller = function onEditSeller() {
             EditSellerDlg.show().then(function(seller) {
-                console.log("Controller: " + seller.name);
                 AppResource.updateSeller(sellerID, seller).success(function(seller) {
-                    centrisNotify.success("product-dlg.Messages.SaveSucceeded");
+                    
                 }).error(function() {
                     centrisNotify.error("product-dlg.Messages.SaveFailed");
                 });

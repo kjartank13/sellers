@@ -15,6 +15,17 @@ describe("SellersController unit tests", function() {
 		imagePath: "http://i.imgur.com/B7qbFh5.jpg"
 	};
 
+
+	var mockSellerDlg = {
+		show: function() {
+			return {
+				then: function(fn){
+					fn(testSeller);
+				}
+			};
+		}
+	};
+
 	beforeEach(inject(function($rootScope, $controller, $injector, _$location_) {
 		scope = $rootScope.$new();
 		$location = _$location_;
@@ -22,7 +33,8 @@ describe("SellersController unit tests", function() {
 		newController = $controller("SellersController", { 
 				$scope: scope,
 				AppResource: AppResource,
-				$location: $location
+				$location: $location,
+				SellerDlg: mockSellerDlg
 			});
 
 	}));
@@ -46,9 +58,13 @@ describe("SellersController unit tests", function() {
 		expect($location.path).toHaveBeenCalledWith("/" + testSeller.id);
 	});
 
-	it ("should call addSeller from onAddSeller", function() {
+	it ("should call addSeller, with testSeller as parameter, from onAddSeller", function() {
+		// console.log(mockSellerDlg.show());
+		spyOn(mockSellerDlg, "show").and.callThrough();
+		spyOn(AppResource, "addSeller").and.callThrough();
+		scope.onAddSeller();
+		expect(AppResource.addSeller).toHaveBeenCalledWith(testSeller);
 		
-		expect(false).toBe(true);
 	});
 
 

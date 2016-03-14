@@ -10,6 +10,49 @@ describe("SellersDetailsController unit tests", function() {
 	var scope;
 	var $location;
 	var $routeParams;
+	var sellerID = 100;
+
+	var testSeller = {
+		id: 		100,
+		name: 	   "Kjarri",
+		category:  "Vefforritun",
+		imagePath: "http://i.imgur.com/B7qbFh5.jpg"
+	};
+
+	var testProduct = {
+			id: "",
+			name: "Hattur",
+			price: 42,
+			quantitySold: 42,
+			quantityInStock: 42,
+			imagePath: "http://i.imgur.com/B7qbFh5.jpg"
+		};
+
+	var testNotify = {
+		success: function(string){},
+		error: function(string){}
+	};
+
+	var mockSellerDlg = {
+		show: function() {
+			return {
+				then: function(fn){
+					fn(testSeller);
+				}
+			};
+		}
+	};
+
+	var mockProductDlg = {
+		show: function() {
+			return {
+				then: function(fn){
+					fn(testProduct);
+				}
+			};
+		}
+	};
+
 
 	beforeEach(inject(function($rootScope, $controller, $injector, _$location_, _$routeParams_) {
 		scope = $rootScope.$new();
@@ -17,12 +60,14 @@ describe("SellersDetailsController unit tests", function() {
 		$routeParams = _$routeParams_;
 		$routeParams.id = "1";
 		AppResource = $injector.get("AppResource");
-		centrisNotify = $injector.get("centrisNotify");
+		centrisNotify = testNotify;
 		newController = $controller("SellerDetailsController", { 
 				$scope: scope,
 				AppResource: AppResource,
 				$location: $location,
-				$routeParams: $routeParams
+				$routeParams: $routeParams,
+				EditSellerDlg: mockSellerDlg,
+				ProductDlg: mockProductDlg
 			});
 
 		
@@ -56,6 +101,22 @@ describe("SellersDetailsController unit tests", function() {
 
 	it ("should have defined onEditProduct function", function() {
 		expect(scope.onEditProduct).toBeDefined();
+	});
+
+
+	it ("should call addSellerProduct from onAddProduct", function() {
+		spyOn(mockProductDlg, "show").and.callThrough();
+		spyOn(AppResource, "addSellerProduct").and.callThrough();
+		scope.onAddProduct();
+		expect(AppResource.addSellerProduct).toHaveBeenCalledWith(sellerID, testProduct);
+	});
+
+	//This test fails. Probably because of test implementation being incorrect.
+	it ("should call updateSeller from onEditSeller", function() {
+		spyOn(mockSellerDlg, "show").and.callThrough();
+		spyOn(AppResource, "updateSeller").and.callThrough();
+		scope.onEditSeller();
+		expect(AppResource.updateSeller).toHaveBeenCalled();
 	});
 });
 

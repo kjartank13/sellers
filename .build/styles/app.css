@@ -6,12 +6,21 @@
   float: right;
 }
 
+.newSellerInput {
+  float: right;
+}
+
 .Sellers .tabcontent {
   font-size: 22px;
   font-weight: bold;
   font-style: italic;
   color: #3e3e3e;
   margin: 18px;
+}
+.Sellers .aboutSeller {
+  text-decoration: underline;
+  text-shadow: 1px 1px #ff0000;
+  font-size: 150%;
 }
 .Sellers .tablist {
   float: left;
@@ -74,9 +83,5 @@
 }
 .Sellers .allProductsItem {
   display: inline;
-}
-
-.newSellerInput {
-  float: right;
 }
 
