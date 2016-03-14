@@ -18,7 +18,6 @@ describe("SellersController unit tests", function() {
 
 
 
-
 	beforeEach(inject(function($rootScope, $controller, $injector, _$location_) {
 		scope = $rootScope.$new();
 		$location = _$location_;
@@ -30,7 +29,6 @@ describe("SellersController unit tests", function() {
 
 			});
 
-		
 	}));
 
 

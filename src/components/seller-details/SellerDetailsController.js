@@ -54,7 +54,7 @@ angular.module("project3App").controller("SellerDetailsController",
                 $scope.allProducts.push(newprod);
                 AppResource.addSellerProduct(sellerID, newprod).success(function(newprod) {
                 }).error(function() {
-                    //TODO: implement error notification
+                    centrisNotify.error("product-dlg.Messages.SaveFailed");
                 });
             });
 
@@ -66,34 +66,11 @@ angular.module("project3App").controller("SellerDetailsController",
         $location.search('product', product);
         
 		EditProductDlg.show(product).then(function(product) {
-				/*if (product.id === undefined)
-				{	
-					product.id = ottarProduct.id;
-				}
-				if (product.name === undefined)
-				{	
-					product.name = ottarProduct.name;
-				}
-				if (product.price === undefined)
-				{	
-					product.price = ottarProduct.price;
-				}
-				if (product.quantitySold === undefined)
-				{	
-					product.quantitySold = ottarProduct.quantitySold;
-				}
-				if (product.quantityInStock === undefined)
-				{	
-					product.quantityInStock = ottarProduct.quantityInStock;
-				}
-				if (product.imagePath === undefined)
-				{	
-					product.imagePath = ottarProduct.imagePath;
-				}*/
+				
 			AppResource.updateProduct(sellerID, product.id, product).success(function(product) {
-				console.log("New product! " + product.name);
+				
 			}).error(function() {
-				//TODO: implement error notification
+				centrisNotify.error("product-dlg.Messages.SaveFailed");
 			});
 		});
 
