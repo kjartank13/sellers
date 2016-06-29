@@ -1,6 +1,6 @@
 # WEPO Project 3
 
-This is a starter project for the 3rd hand-in assignment in Web Programming II.
+This the 3rd hand-in assignment in Web Programming II.
 It has the following dependencies:
 
 * node/npm
